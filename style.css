@@ -17,11 +17,11 @@ h1 {
   justify-content: space-between;
 }
 
-#player1 {
+#player-hand {
    --rot: 1;
 }
 
-#player2 {
+#computer-hand {
   --rot: -1;
 }
 
@@ -30,7 +30,6 @@ h1 {
   width: 40vw;
   height: 40vw;
   background-size: 100%;
-  background-image: url(img/hand_rock.png);
 }
 
 .player.rock {
@@ -91,13 +90,11 @@ h1 {
   pointer-events: none;
 }
 
-#texts h1 {
+#result {
   color: #ffde53;
   text-shadow: 4px 4px 1px red, -4px -4px 1px red, 4px -4px 1px red, -4px 4px 1px red;
-}
-
-.hidden {
-  display: none;
+  font-size:70px;
+  text-align: center;
 }
 
 #buttons {

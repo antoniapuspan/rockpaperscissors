@@ -12,25 +12,18 @@
   <h1>Rock, Paper, Scissors</h1>
 
   <div id="gamefield">
-    <div id="player1" class="player-hand"></div>
-    <div id="player2" class="computer-hand"></div>
+    <img id="player-hand" class="player" src="img/hand_rock.png">
+    <img id="computer-hand" class="player" src="img/hand_rock.png">
     <div id="texts">
-      <div id="lose" class="hidden"><h1>
-        You lose
-      </h1></div>
-      <div id="win" class="hidden"><h1>
-        You win
-      </h1></div>
-      <div id="draw" class="hidden"><h1>
-        It's a draw
+      <div id="result"><h1>
       </h1></div>
     </div>
   </div>
 
   <div id="buttons">
-    <button class="rock"></button>
-    <button class="paper"></button>
-    <button class="scissors"></button>
+    <button onclick="playerDraw('rock')" class="rock"></button>
+    <button onclick="playerDraw('paper')" class="paper"></button>
+    <button onclick="playerDraw('scissors')" class="scissors"></button>
   </div>
 <script src="script.js"></script>
 </body>

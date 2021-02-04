@@ -1,31 +1,61 @@
-const game = () => {
 
-    //Play Match
-    const playMatch = () => {
-        const options = document.querySelectorAll("#buttons button");
-        const playerHand = document.querySelector(".player-hand");
-        const computerHand = document.querySelector(".computer-hand");
-        //Computer Options
-        const computerOptions = ["rock", "paper", "scissors"];
+function playerDraw(choice) {
+    //changing the player's img source
+    const playerHand = document.querySelector("#player-hand");
+    playerHand.src = `./img/hand_${choice}.png`;
 
-        options.forEach(option => {
-            option.addEventListener("click", function() {
-                //Computer Choice
-                const computerNumber = Math.floor(Math.random() * 3);
-                const computerChoice = computerOptions[computerNumber];
-                console.log(computerChoice);
-            });
-        });
+    //creating an array with all computer's options
+    const computerOptions = ["rock", "paper", "scissors"];
+    const computerNumber = Math.floor(Math.random() * 3);
+    const computerChoice = computerOptions[computerNumber];
+    
+    //same for computer
+    const computerHand = document.querySelector("#computer-hand");
+    computerHand.src = `./img/hand_${computerChoice}.png`;
+    compareHands(choice, computerChoice);
+}
 
-       
-       
+function compareHands (playerChoice, computerChoice) {
+    //Update Text
+    const result = document.querySelector('#result');
+    //Checking for a tie
+    console.log(playerChoice, computerChoice)
+    if (playerChoice === computerChoice) {
+        result.textContent = "It is a tie";
+        return;
 
-    };
+    }
+    //Check for Rock
+    else if (playerChoice === 'rock') {
+        if (computerChoice === 'scissors') {
+            result.textContent = 'Player Wins';
+            return;
+        } else {
+            result.textContent = 'Computer Wins';
+            return;
+        }
 
-    //Is call all the inner function
-    playMatch();
+    }
+    //Check for Paper
+    else if (playerChoice === 'scissors') {
+        if (computerChoice === 'paper') {
+            result.textContent = 'Player Wins';
+            return;
+        } else {
+            result.textContent = 'Computer Wins';
+            return;
+        }
+    }
+    //Check for Scissors 
+    else if (playerChoice === 'scissors') {
+        if (computerChoice === 'rock') {
+            result.textContent = 'Computer wins';
+            return;
+        } else {
+            result.textContent = 'Player Wins';
+            return;
+        }
+    }
 
-};
-
-//start the game function
-game();
+}
+//Is call all the inner function
