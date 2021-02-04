@@ -1,21 +1,35 @@
-
 function playerDraw(choice) {
     //changing the player's img source
     const playerHand = document.querySelector("#player-hand");
     playerHand.src = `./img/hand_${choice}.png`;
+    const hands = document.querySelectorAll('#gamefield img');
+
+    hands.forEach(hand => {
+        hand.addEventListener("animationed", function () {
+            choice.style.animation = "";
+        });
+
+    })
 
     //creating an array with all computer's options
     const computerOptions = ["rock", "paper", "scissors"];
     const computerNumber = Math.floor(Math.random() * 3);
     const computerChoice = computerOptions[computerNumber];
-    
-    //same for computer
-    const computerHand = document.querySelector("#computer-hand");
-    computerHand.src = `./img/hand_${computerChoice}.png`;
-    compareHands(choice, computerChoice);
+
+    setTimeout(() => { //same for computer
+        const computerHand = document.querySelector("#computer-hand");
+        computerHand.src = `./img/hand_${computerChoice}.png`;
+
+        compareHands(choice, computerChoice);
+    }, 2000)
+
+
+    //Animation
+    playerHand.style.animation = "shake 2s ease";
+    computerHand.style.animation = "shake 2s ease";
 }
 
-function compareHands (playerChoice, computerChoice) {
+function compareHands(playerChoice, computerChoice) {
     //Update Text
     const result = document.querySelector('#result');
     //Checking for a tie
