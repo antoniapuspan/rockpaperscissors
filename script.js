@@ -9,7 +9,7 @@ function getUserSelection(); {
     makeRandomComputerChoice();
 }
 
-function makeRandomComputerChoice(mComputerChoice(); {
+function makeRandomComputerChoice(); {
         showAnimations();
     }
 
