@@ -25,8 +25,8 @@ h1 {
 
 .player {
   transform: scale(var(--rot),1);
-  width: 20vw;
-  height: 20vw;
+  width: 30vw;
+  height: 30vw;
   background-size: 100%;
 }
 
